@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MemoryGame.html</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+
+<style>
+  hr {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background: white;
+  }
+
+  .collumn {
+    height: calc(var(--responsiveUnit) * 40);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .playButton {
+    --backgroundColor: #ffffff00;
+    --borderStyle: #ffffff 3px solid;
+    --buttonHeight: calc(var(--responsiveUnit) * 1.5);
+    --buttonWidth: calc(var(--responsiveUnit) * 11);
+    --buttonBorderRadius: 20px;
+    --buttonBorder: 2px white groove;
+    --buttonShadow: #ffffff 0px 0px 20px 3px;
+
+
+  }
+
+  .playButton {
+    position: relative;
+    background-color: var(--backgroundColor);
+    border: var(--borderStyle);
+    border-radius: var(--buttonBorderRadius);
+    border: var(--buttonBorder);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: var(--buttonWidth);
+    height: var(--buttonHeight);
+  }
+
+  .playButton::before {
+    content: 'Play';
+    text-align: center;
+    font-size: calc(var(--responsiveUnit) * 1.5);
+    font-weight: 500;
+    font-family: Inter;
+  }
+
+  .playButton:hover {
+    transition: ease-in-out 0.3s;
+    box-shadow: var(--buttonShadow);
+  }
+
+
+
+  #pairsOfCardsButton {
+    --backgroundColor: #ffffff00;
+    --borderStyle: #ffffff 3px solid;
+    --buttonHeight: calc(var(--responsiveUnit) * 1.5);
+    --buttonWidth: calc(var(--responsiveUnit) * 11);
+    --buttonBorderRadius: 20px;
+    --buttonBorder: 2px white groove;
+    --buttonShadow: #ffffff 0px 0px 20px 3px;
+  }
+
+  #pairsOfCardsButton {
+
+    position: relative;
+    background-color: var(--backgroundColor);
+    border: var(--borderStyle);
+    border-radius: var(--buttonBorderRadius);
+    border: var(--buttonBorder);
+    color: white;
+    padding: 15px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: var(--buttonWidth);
+    height: var(--buttonHeight);
+    overflow: hidden;
+    transition: ease-in-out 0.5s;
+  }
+
+  #pairsOfCardsButton:hover {
+    transition: ease-in-out 0.3s;
+    box-shadow: var(--buttonShadow);
+  }
+
+  #pairsOfCardHeader {
+    font-size: calc(var(--responsiveUnit) * 1);
+    font-weight: 500;
+    font-family: Inter;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  #pairsOfCardHeader span {
+    margin-top: calc(var(--responsiveUnit) * 0.3);
+    margin-right: calc(var(--responsiveUnit) * 0.5);
+  }
+
+  #pairsOfCardHeader img {
+    align-items: center;
+
+
+  }
+
+  #optionsCards {
+    --optionsCardsHeight: calc(var(--responsiveUnit) * 0);
+  }
+
+  #optionsCards {
+    font-weight: 500;
+    font-family: Inter;
+    text-align: center;
+    font-size: calc(var(--responsiveUnit) * 1.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: var(--optionsCardsHeight);
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  #borderOptionsCards{
+    --bgColor: transparent;
+  }
+  #borderOptionsCards {
+    background-color: var(--backgroundColor);
+    position: relative;
+    border: 2px white groove;
+    border-radius: 20px;
+    height: calc(var(--responsiveUnit) * 2);
+    width: calc(var(--responsiveUnit) * 5);
+    align-items: center;
+    justify-content: center;
+  }
+
+  #borderOptionsCards:hover {
+    transition: ease-in-out 0.3s;
+    background-color: #ffffff;
+    border: 2px #1F212B01 groove;
+    color: #1f212b;
+  }
+
+
+  #quantOfLivesButton {
+    --backgroundColor: #ffffff00;
+    --borderStyle: #ffffff 3px solid;
+    --buttonHeight: calc(var(--responsiveUnit) * 1.5);
+    --buttonWidth: calc(var(--responsiveUnit) * 11);
+    --buttonBorderRadius: 20px;
+    --buttonBorder: 2px white groove;
+    --buttonShadow: #ffffff 0px 0px 20px 3px;
+  }
+
+  #quantOfLivesButton {
+    position: relative;
+    background-color: var(--backgroundColor);
+    border: var(--borderStyle);
+    border-radius: var(--buttonBorderRadius);
+    border: var(--buttonBorder);
+    color: white;
+    padding: 15px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: var(--buttonWidth);
+    height: var(--buttonHeight);
+    overflow: hidden;
+    transition: ease-in-out 0.5s;
+  }
+
+  #quantOfLivesButton:hover {
+    transition: ease-in-out 0.3s;
+    box-shadow: var(--buttonShadow);
+  }
+
+  #quantOfLivesHeader {
+    font-size: calc(var(--responsiveUnit) * 1);
+    font-weight: 500;
+    font-family: Inter;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  #quantOfLivesButton span {
+    margin-top: calc(var(--responsiveUnit) * 0.3);
+    margin-right: calc(var(--responsiveUnit) * 0.5);
+  }
+
+  #quantOfLivesButton img {
+    align-items: center;
+  }
+
+  #optionsLives {
+    --optionsLivesHeight: calc(var(--responsiveUnit) * 0);
+  }
+
+  #optionsLives {
+    font-weight: 500;
+    font-family: Inter;
+    text-align: center;
+    font-size: calc(var(--responsiveUnit) * 1.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: var(--optionsLivesHeight);
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  #rowOfHeart{
+    position: relative;
+    border: 2px white groove;
+    border-radius: 20px;
+    width: calc(var(--responsiveUnit) * 10.5);
+    align-items: center;
+    justify-content: space-evenly;
+    height: calc(var(--responsiveUnit) * 2);
+    display: flex;
+    flex-direction: row;
+  }
+  #rowOfHeart:hover {
+    transition: ease-in-out 0.3s;
+    background-color: #ffffff;
+    border: #1f212b01 2px groove;
+  }
+
+</style>
+
+
+
+<body>
+  <header>
+    <h1>
+      <a href="https://github.com/GuiBelotti/memoryGame.html" target="_blank">MemoryGame.html</a>
+    </h1>
+  </header>
+
+  <main>
+    <div class="collumn">
+      <img src="assets/iconeDark.svg" alt="MemoryGame.html">
+
+      <div class="playButton"></div>
+
+      <div id="pairsOfCardsButton" onclick="OnClickPairsOfCardsButton()">
+        <div id="pairsOfCardHeader">
+          <span>Quantidade de cartas </span>
+          <img src="assets/arrowDown.svg" alt="arrowDown">
+        </div>
+        <div id="optionsCards">
+          <div id="borderOptionsCards">
+            <span>3</span>
+          </div>
+          <div id="borderOptionsCards">
+            <span>4</span>
+          </div>
+          <div id="borderOptionsCards">
+            <span>5</span>
+          </div>
+          <div id="borderOptionsCards">
+            <span>6</span>
+          </div>
+
+        </div>
+      </div>
+      <div id="quantOfLivesButton" onclick="OnClickQuantOfLivesButton()">
+        <div id="quantOfLivesHeader">
+          <span>Quantidade de vidas </span>
+          <img src="assets/arrowDown.svg" alt="arrowDown">
+        </div>
+        <div id="optionsLives">
+          <div id="rowOfHeart">
+            <img src="assets/heart.svg" alt="heart">
+          </div>
+          <div id="rowOfHeart">
+            <img>
+            <img src="assets/heart.svg" alt="heart">
+            <img src="assets/heart.svg" alt="heart">
+            <img>
+          </div>
+          <div id="rowOfHeart">
+            <img>
+            <img src="assets/heart.svg" alt="heart">
+            <img src="assets/heart.svg" alt="heart">
+            <img src="assets/heart.svg" alt="heart">
+            <img>
+          </div>
+          <div id="rowOfHeart">
+            <img src="assets/heart.svg" alt="heart">
+            <img src="assets/heart.svg" alt="heart">
+            <img src="assets/heart.svg" alt="heart">
+            <img src="assets/heart.svg" alt="heart">
+          </div>
+          <div id="rowOfHeart">
+            <img src="assets/heart.svg" alt="heart">
+            <img src="assets/heart.svg" alt="heart">
+            <img src="assets/heart.svg" alt="heart">
+            <img src="assets/heart.svg" alt="heart">
+            <img src="assets/heart.svg" alt="heart">
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <h2>
+      <br>
+      by <a href="https://github.com/GuiBelotti" target="_blank">GuiBelotti</a>
+    </h2>
+  </footer>
+
+  <script type="text/javascript" src="script.js">
+  </script>
+</body>
+
+</html>
