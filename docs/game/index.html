@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MemoryGame.html</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+
+<style>
+
+    .gridContainer{
+    --NumberGridColumns: 1fr ;
+    --GridGap: 10px;
+  }
+  .gridContainer{
+    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 300px;
+    grid-template-columns: var(--NumberGridColumns);
+    grid-gap: var(--GridGap);
+    justify-content: center;
+  }
+
+  /* .flipCard{
+    --widthFlipCard: 100px;
+    --heightFlipCard: 100px;
+  }
+
+  .flipCard{
+    width: var(--widthFlipCard);
+    height: var(--heightFlipCard);
+    border-radius: 30px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: rotate(var(--rotation-offset));
+    perspective: calc(var(--responsiveUnit) * 10);
+  }
+
+.flipCardInner{
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.flipLeft:active .flipCardInner {
+    transform: rotateY(-180deg);
+}
+
+.flipLeft .flipCardBack {
+    transform: rotateY(-180deg);
+}
+
+.flipCardFront,
+.flipCardBack {
+    --borderCard: calc(var(--responsiveUnit) * 0.4);
+}
+.flipCardFront{
+  background-color: red;
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--borderCard);
+    backface-visibility: hidden;
+}
+.flipCardBack{
+  background-color: blue;
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--borderCard);
+    backface-visibility: hidden;
+} */
+
+</style>
+
+
+
+<body>
+  <header>
+    <h1>
+      <a href="https://github.com/GuiBelotti/memoryGame.html" target="_blank">MemoryGame.html</a>
+    </h1>
+    <script type="text/javascript" src="script.js">
+    </script>
+  </header>
+
+  <main>
+
+    <div class="gridContainer"></div>
+
+
+    <!-- <div class="gridContainer">
+      <div class="flipCard flipLeft ex">
+        <div class="flipCardInner">
+          <div class="flipCardFront"></div>
+          <div class="flipCardBack">
+            00
+          </div>
+        </div>
+      </div>
+
+      </div> -->
+
+  </main>
+
+  <footer>
+    <h2>
+      <br>
+      by <a href="https://github.com/GuiBelotti" target="_blank">GuiBelotti</a>
+    </h2>
+  </footer>
+
+
+</body>
+
+</html>

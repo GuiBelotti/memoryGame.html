@@ -141,10 +141,10 @@
     border-radius: 20px;
   }
 
-  #borderOptionsCards{
+  .borderOptionsCards{
     --bgColor: transparent;
   }
-  #borderOptionsCards {
+  .borderOptionsCards {
     background-color: var(--backgroundColor);
     position: relative;
     border: 2px white groove;
@@ -153,9 +153,10 @@
     width: calc(var(--responsiveUnit) * 5);
     align-items: center;
     justify-content: center;
+    top: calc(var(--responsiveUnit) * 0.1);
   }
 
-  #borderOptionsCards:hover {
+  .borderOptionsCards:hover {
     transition: ease-in-out 0.3s;
     background-color: #ffffff;
     border: 2px #1F212B01 groove;
@@ -264,24 +265,25 @@
     <div class="collumn">
       <img src="assets/iconeDark.svg" alt="MemoryGame.html">
 
-      <div class="playButton"></div>
 
-      <div id="pairsOfCardsButton" onclick="OnClickPairsOfCardsButton()">
-        <div id="pairsOfCardHeader">
-          <span>Quantidade de cartas </span>
+        <a href="game"><div class="playButton"></div></a>
+
+      <div id="pairsOfCardsButton" >
+        <div id="pairsOfCardHeader"onclick="OnClickPairsOfCardsButton()">
+          <span>Quantidade de pares</span>
           <img src="assets/arrowDown.svg" alt="arrowDown">
         </div>
         <div id="optionsCards">
-          <div id="borderOptionsCards">
+          <div class="borderOptionsCards" id="borderOptionsCards3" onclick="QuantPairsOfCardsButton(3)">
             <span>3</span>
           </div>
-          <div id="borderOptionsCards">
+          <div class="borderOptionsCards" id="borderOptionsCards4" onclick="QuantPairsOfCardsButton(4)">
             <span>4</span>
           </div>
-          <div id="borderOptionsCards">
+          <div class="borderOptionsCards" id="borderOptionsCards5" onclick="QuantPairsOfCardsButton(5)">
             <span>5</span>
           </div>
-          <div id="borderOptionsCards">
+          <div class="borderOptionsCards" id="borderOptionsCards6" onclick="QuantPairsOfCardsButton(6)">
             <span>6</span>
           </div>
 

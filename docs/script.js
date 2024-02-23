@@ -23,6 +23,16 @@ function OnClickPairsOfCardsButton() {
   }
 }
 
+function QuantPairsOfCardsButton(cardNumber) {
+
+  var selectedOption = document.getElementById('borderOptionsCards' + cardNumber);
+  var selectedText = selectedOption.querySelector('span').innerText;
+
+
+  console.log('Texto selecionado:', selectedText);
+  localStorage.setItem("NumberOfPairs", selectedText);
+
+}
 function OnClickQuantOfLivesButton() {
 
   expandedButtonLives = !expandedButtonLives;
