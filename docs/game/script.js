@@ -5,51 +5,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     {
       name: 'css',
-      img: '..\assets\images\css-3.png',
+      img: '../assets/images/css-3.png',
     },
     {
       name: 'git',
-      img: '..\assets\images\git.png',
+      img: '../assets/images/git.png',
     },
     {
       name: 'github',
-      img: '..\assets\images\github.png',
+      img: '../assets/images/github.png',
     },
     {
       name: 'html',
-      img: '..\assets\images\html.png',
+      img: '../assets/images/html.png',
     },
     {
       name: 'java',
-      img: '..\assets\images\java.png',
+      img: '../assets/images/java.png',
     },
     {
       name: 'js',
-      img: '..\assets\images\js.png',
+      img: '../assets/images/js.png',
     },
     {
       name: 'css',
-      img: '..\assets\images\css-3.png',
+      img: '../assets/images/css-3.png',
     },
     {
       name: 'git',
-      img: '..\assets\images\git.png',
+      img: '../assets/images/git.png',
     },
     {
       name: 'github',
-      img: '..\assets\images\github.png',
+      img: '../assets/images/github.png',
     },
     {
       name: 'html',
-      img: '..\assets\images\html.png',
+      img: '../assets/images/html.png',
     },
     {
       name: 'java',
-      img: '..\assets\images\java.png',
+      img: '../assets/images/java.png',
     },
     {
       name: 'js',
-      img: '..\assets\images\js.png',
+      img: '../assets/images/js.png',
     },
 
   ]
@@ -75,12 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const optionTwoId = idCardsChosen[1];
 
     if (cardsChosen[0] === cardsChosen[1]) {
-      cards[optionOneId].setAttribute('src', '..\assets\images\check.png');
-      cards[optionTwoId].setAttribute('src', '..\assets\images\check.png');
+      cards[optionOneId].setAttribute('src', '../assets/images/check.png');
+      cards[optionTwoId].setAttribute('src', '../assets/images/check.png');
       cardsCombination.push(cardsChosen);
     } else {
-      cards[optionOneId].setAttribute('src', '../../assets/images/board.png');
-      cards[optionTwoId].setAttribute('src', '../../assets/images/board.png');
+      cards[optionOneId].setAttribute('src', '../assets/images/board.png');
+      cards[optionTwoId].setAttribute('src', '../assets/images/board.png');
     }
 
     cardsChosen.length = 0;
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function createBoard() {
     for (let i = 0; i < cards.length; i++) {
       const card = document.createElement('img')
-      card.setAttribute('src', 'images/board.png')
+      card.setAttribute('src', '../assets/images/board.png')
       card.setAttribute('data-id', i)
       card.addEventListener('click', flipCard)
       gridContainer.appendChild(card)
@@ -177,7 +177,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // }
-
-
-
-
